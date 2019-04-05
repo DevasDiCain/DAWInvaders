@@ -17,10 +17,10 @@ public abstract class Entidad {//Esta clase será Padre (de todos los elementos 
     protected int x;
     protected int y;
 
-    protected int alto;
+    protected int alto;//Tamaño de nuestra entidad (lo que ocupa)
     protected int ancho;
 
-    protected int desplazamientoHorizontal;//Será en el eje X
+    protected int desplazamientoHorizontal;//Será en el eje X , será un contador que nos indique cuanto se ha desplazado la entidad por la pantalla
 
     protected ImageIcon imagen;//Nos permitirá cargar una imagen para nuestros objetos(que serán enemigos y nave)
 
@@ -30,16 +30,16 @@ public abstract class Entidad {//Esta clase será Padre (de todos los elementos 
         desplazamientoHorizontal = 0;
         activado = false;
     }
-     protected void setPosicion(int x, int y) {
+     protected void setPosicion(int x, int y) {//Modificamos su posición
         this.x = x;
         this.y = y;
     }
 
-    public void actualizar() {
+    public void actualizar() {//Método que actualizará el estado de nuestra entidad
 
     }
 
-    public Image getImagen() {//metodo que nos devolverá la imagen de la nave
+    public Image getImagen() {//metodo que nos devolverá la imagen de nuestra entidad
         return imagen.getImage();
     }
 
@@ -65,7 +65,7 @@ public abstract class Entidad {//Esta clase será Padre (de todos los elementos 
         return ancho;
     }
 
-    public boolean disparar() {//Disparos
+    public boolean disparar() {
         return false;
     }
 
