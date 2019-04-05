@@ -27,7 +27,7 @@ public class Nave extends Entidad {
         keys = 0x00000000;//Establecemos las keys a 0
     }
 
-    public void iniciar() {//Iniciamos la pantalla
+    public void iniciar() {//Mostramos nuestra nave por la pantalla
         setImagen("nave.png");//Imagen de nuestra nave
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla
     }

@@ -5,10 +5,15 @@
  */
 package graficos;
 
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+
 /**
  *
- * @author peper
+ * @author DevasDiCain
  */
-public class Juego {
-    
+public class Juego extends JPanel implements ActionListener {//Aquí vendrá la chicha de nuestro juego
+//La clase Juego extienda la pantalla Jpanel e implementa el reconocimiento de acciones
+    private Nave nave;
+
 }
