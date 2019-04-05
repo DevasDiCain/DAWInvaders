@@ -81,4 +81,3 @@ public abstract class Entidad {//Esta clase será Padre y abstracta
         activado = false;
     }
 }
-}
