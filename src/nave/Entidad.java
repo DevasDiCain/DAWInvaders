@@ -5,10 +5,28 @@
  */
 package nave;
 
+import javax.swing.ImageIcon;
+
 /**
  *
- * @author peper
+ * @author DevasDiCain
  */
-public class Entidad {
-    
+public abstract class Entidad {//Esta clase será Padre y abstracta
+
+    protected int x;
+    protected int y;
+
+    protected int alto;
+    protected int ancho;
+
+    protected int desplazamientoHorizontal;
+
+    protected ImageIcon imagen;
+
+    protected boolean activado;
+
+    protected Entidad() {
+        desplazamientoHorizontal = 0;
+        activado = false;
+    }
 }

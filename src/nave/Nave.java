@@ -7,7 +7,7 @@ package nave;
 
 /**
  *
- * @author peper
+ * @author DevasDiCain
  */
 public class Nave {
     
