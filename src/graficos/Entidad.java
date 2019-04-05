@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  *
  * @author DevasDiCain
  */
-public abstract class Entidad {//Esta clase será Padre y abstracta
+public abstract class Entidad {//Esta clase será Padre (de todos los elementos "gráficos" o tangibles de nuestro programa) y abstracta
 
     protected int x;
     protected int y;
@@ -22,7 +22,7 @@ public abstract class Entidad {//Esta clase será Padre y abstracta
 
     protected int desplazamientoHorizontal;//Será en el eje X
 
-    protected ImageIcon imagen;//Nave
+    protected ImageIcon imagen;//Nos permitirá cargar una imagen para nuestros objetos(que serán enemigos y nave)
 
     protected boolean activado;
 
@@ -43,7 +43,7 @@ public abstract class Entidad {//Esta clase será Padre y abstracta
         return imagen.getImage();
     }
 
-    protected void setImagen(String rutaImagen) {
+    protected void setImagen(String rutaImagen) {//Este método nos permitirá cambiar la imagen de nuestros enemigos y nave 
         imagen = new ImageIcon(this.getClass().getResource(rutaImagen));
         alto = imagen.getIconHeight();
         ancho = imagen.getIconWidth();
