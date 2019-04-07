@@ -5,6 +5,7 @@
  */
 package graficos;
 
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -128,7 +129,7 @@ public class Bandada {
             desplVertical = 0;
         }
 
-        for (Enemigo e: enemigos) {
+        for (Enemigo e: enemigos) {//Bucle que controla que no se salgan de la pantalla
             e.setPosicion(e.getX() + desplHorizontal, e.getY() + desplVertical);
 
             if (limiteVertical < e.getY()) {
@@ -145,6 +146,48 @@ public class Bandada {
             }
         }
     }
+    
+    public boolean comprobarColision(Rectangle rect) {//Comprobamos si las balas colisiona con un elemento inferior o no
+        for (Enemigo e: enemigos) {
+            Rectangle r = new Rectangle(e.getX(), e.getY(), e.getAlto(), e.getAncho());
+            if (r.intersects(rect) && e.isActivo()) {
+                if (e.isDisparable() && e.getFila() != 0) {
+                    legarDisparo(e);
+                }
+                e.setActivo(false);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void legarDisparo(Enemigo e) {//Cedemos el disparo si colisionan
+        int filas = e.getFila();
+        while(filas != 0) {
+            Enemigo ee = enemigos.get(enemigos.indexOf(e) - COLUMNAS);
+            if (ee.isActivo()) {
+                ee.setDisparable(true);
+                return;
+            }
+            filas--;
+        }
+    }
+
+    public int getCoordenadaDisparoX(Rectangle rect) {
+        int y = (int) rect.getY();
+        for (Enemigo e: enemigos) {
+            int x = e.getX() - (e.getAncho() / 2);
+            if (rect.contains(x, y)) {
+                return x;
+            }
+        }
+        return 0;
+    }
+
+    public int getCoordenadaDisparoY() {
+        return limiteVertical;
+    }
+
     
     
 
