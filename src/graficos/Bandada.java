@@ -55,7 +55,7 @@ public class Bandada {
         IZQUIERDA, DERECHA
     }
     
-     public Bandada() {
+     public Bandada() {//Constructor que inicia los parámetors que tendrá la bandada
 
         distHorizontal = 32 + 16;
         distVertical = 24 + 16;
@@ -73,7 +73,7 @@ public class Bandada {
         enemigos = new ArrayList<Enemigo>();
     }
 
-    public void iniciar() {
+    public void iniciar() {//Inicia la bandada con enemigos aleatorios
 
         int posicionVertical = 0;
         int posicionHorizontal;
@@ -96,7 +96,7 @@ public class Bandada {
                     break;
             }
 
-            for (int j = 0; j < COLUMNAS; ++j) {
+            for (int j = 0; j < COLUMNAS; ++j) {//Método que controla la posición que tendrá cada enemigo en la bandada
                 Enemigo enemigo = new Enemigo(t, i, j);
                 enemigo.setPosicion(posicionHorizontal, posicionVertical);
                 if (i == FILAS - 1) {
@@ -111,6 +111,9 @@ public class Bandada {
     public ArrayList<Enemigo> getEnemigos() {
         return enemigos;
     }
+    
+    
+    
 
 
 }
