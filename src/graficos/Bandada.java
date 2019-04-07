@@ -111,7 +111,40 @@ public class Bandada {
     public ArrayList<Enemigo> getEnemigos() {
         return enemigos;
     }
-    
+    public void actualizar() {//Método que actualiza el "comportamiento" de la bandada, es decir corregirá la posicion para que no se salga de la pantalla, los moverá y los hará dispasrar
+
+        if (sentido == Direccion.DERECHA) {
+            desplHorizontal = VELOCIDAD_HORIZONTAL;
+        }
+
+        if (sentido == Direccion.IZQUIERDA) {
+            desplHorizontal = -VELOCIDAD_HORIZONTAL;
+        }
+
+        if (sentidoCambiado) {
+            desplVertical = VELOCIDAD_VERTICAL;
+            sentidoCambiado = false;
+        } else {
+            desplVertical = 0;
+        }
+
+        for (Enemigo e: enemigos) {
+            e.setPosicion(e.getX() + desplHorizontal, e.getY() + desplVertical);
+
+            if (limiteVertical < e.getY()) {
+                limiteVertical = e.getY() + 32;
+            }
+
+            if (e.getX() > limiteDerecho) {
+                sentido = Direccion.IZQUIERDA;
+                sentidoCambiado = true;
+            }
+            if (e.getX() < limiteIzquierdo) {
+                sentido = Direccion.DERECHA;
+                sentidoCambiado = true;
+            }
+        }
+    }
     
     
 
