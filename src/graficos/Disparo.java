@@ -31,5 +31,25 @@ public class Disparo extends Entidad {
         x = 0;
         y = 0;
     }
+     public void setPosicion(int x, int y) {
+        super.setPosicion(x, y);
+    }
+
+    public boolean estaActivado() {
+        return activado;
+    }
+
+    public void activar() {//Métodos que activan/desactivan los disparos
+        activado = true;
+    }
+
+    public void desactivar() {
+        activado = false;
+    }
+
+    public void actualizar() {//Actualiza el estado del disparo
+        if (!activado) {
+            return;
+        }
 
 }
