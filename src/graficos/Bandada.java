@@ -6,6 +6,7 @@
 package graficos;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -53,4 +54,63 @@ public class Bandada {
     private enum Direccion {
         IZQUIERDA, DERECHA
     }
+    
+     public Bandada() {
+
+        distHorizontal = 32 + 16;
+        distVertical = 24 + 16;
+
+        desplHorizontal = VELOCIDAD_HORIZONTAL;
+        desplVertical = 0;
+
+        limiteIzquierdo = desplHorizontal;
+        limiteDerecho = Pantalla.ANCHO - (distHorizontal - 16);
+        limiteVertical = 0;
+
+        sentido = Direccion.DERECHA;
+        sentidoCambiado = false;
+
+        enemigos = new ArrayList<Enemigo>();
+    }
+
+    public void iniciar() {
+
+        int posicionVertical = 0;
+        int posicionHorizontal;
+        Enemigo.Tipo t = Enemigo.Tipo.TIPO_1;
+
+        for (int i = 0; i < FILAS; ++i) {
+
+            posicionHorizontal = (Pantalla.ANCHO - (distHorizontal * COLUMNAS)) / 2;
+            posicionVertical += distVertical;
+
+            switch (i % 3) {
+                case 0:
+                    t = Enemigo.Tipo.TIPO_1;
+                    break;
+                case 1:
+                    t = Enemigo.Tipo.TIPO_2;
+                    break;
+                case 2:
+                    t = Enemigo.Tipo.TIPO_3;
+                    break;
+            }
+
+            for (int j = 0; j < COLUMNAS; ++j) {
+                Enemigo enemigo = new Enemigo(t, i, j);
+                enemigo.setPosicion(posicionHorizontal, posicionVertical);
+                if (i == FILAS - 1) {
+                    enemigo.setDisparable(true);
+                }
+                enemigos.add(enemigo);
+                posicionHorizontal += distHorizontal;
+            }
+        }
+    }
+
+    public ArrayList<Enemigo> getEnemigos() {
+        return enemigos;
+    }
+
+
 }
