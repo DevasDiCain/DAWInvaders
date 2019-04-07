@@ -11,7 +11,7 @@ import java.util.Random;
 
 /**
  *
- * @author peper
+ * @author DevasDiCain
  */
 public class Bandada {
 
@@ -20,7 +20,7 @@ public class Bandada {
 
     static private int VELOCIDAD_HORIZONTAL = 2;//Velocidad de desplazamiento horizontal
     static private int VELOCIDAD_VERTICAL = 4;//Velocidad de desplazamiento vertical
-    
+
     private Direccion sentido;//Clase tipo enum que crearemos más abajo
     private boolean sentidoCambiado;//Correción de la dirección
 
@@ -36,18 +36,16 @@ public class Bandada {
 
     private ArrayList<Enemigo> enemigos;//Será el grupo de enemigos que formarán la banda
 
-    
-    
-    public void getDisparo(ArrayList<Disparo> disparos) {
+    public void getDisparo(ArrayList<Disparo> disparos) {//Método que recogerá una lista de disparos  y recorrerá la lista de enemigos en busca de a cuales puede golpear
         ArrayList<Enemigo> enemigosDisparables = new ArrayList<Enemigo>();
-        for (Enemigo e: enemigos) {
+        for (Enemigo e : enemigos) {
             if (e.isDisparable() && e.isActivo()) {
                 enemigosDisparables.add(e);
             }
         }
         Enemigo e = enemigosDisparables.get(new Random().nextInt(enemigosDisparables.size()));
-        Disparo d = new Disparo(Disparo.Tipo.ENEMIGO);
-        d.setPosicion(e.getX() + (e.getAncho()/2) + 4, e.getY() + 4);
+        Disparo d = new Disparo(Disparo.Tipo.ENEMIGO);//Añadimos un tipo de disparo
+        d.setPosicion(e.getX() + (e.getAncho() / 2) + 4, e.getY() + 4);
         d.activar();
         disparos.add(d);
     }
@@ -55,8 +53,8 @@ public class Bandada {
     private enum Direccion {
         IZQUIERDA, DERECHA
     }
-    
-     public Bandada() {//Constructor que inicia los parámetors que tendrá la bandada
+
+    public Bandada() {//Constructor que inicia los parámetors que tendrá la bandada
 
         distHorizontal = 32 + 16;
         distVertical = 24 + 16;
@@ -112,6 +110,7 @@ public class Bandada {
     public ArrayList<Enemigo> getEnemigos() {
         return enemigos;
     }
+
     public void actualizar() {//Método que actualiza el "comportamiento" de la bandada, es decir corregirá la posicion para que no se salga de la pantalla, los moverá y los hará dispasrar
 
         if (sentido == Direccion.DERECHA) {
@@ -129,7 +128,7 @@ public class Bandada {
             desplVertical = 0;
         }
 
-        for (Enemigo e: enemigos) {//Bucle que controla que no se salgan de la pantalla
+        for (Enemigo e : enemigos) {//Bucle que controla que no se salgan de la pantalla
             e.setPosicion(e.getX() + desplHorizontal, e.getY() + desplVertical);
 
             if (limiteVertical < e.getY()) {
@@ -146,9 +145,9 @@ public class Bandada {
             }
         }
     }
-    
+
     public boolean comprobarColision(Rectangle rect) {//Comprobamos si las balas colisiona con un elemento inferior o no
-        for (Enemigo e: enemigos) {
+        for (Enemigo e : enemigos) {
             Rectangle r = new Rectangle(e.getX(), e.getY(), e.getAlto(), e.getAncho());
             if (r.intersects(rect) && e.isActivo()) {
                 if (e.isDisparable() && e.getFila() != 0) {
@@ -163,7 +162,7 @@ public class Bandada {
 
     private void legarDisparo(Enemigo e) {//Cedemos el disparo si colisionan
         int filas = e.getFila();
-        while(filas != 0) {
+        while (filas != 0) {
             Enemigo ee = enemigos.get(enemigos.indexOf(e) - COLUMNAS);
             if (ee.isActivo()) {
                 ee.setDisparable(true);
@@ -175,7 +174,7 @@ public class Bandada {
 
     public int getCoordenadaDisparoX(Rectangle rect) {
         int y = (int) rect.getY();
-        for (Enemigo e: enemigos) {
+        for (Enemigo e : enemigos) {
             int x = e.getX() - (e.getAncho() / 2);
             if (rect.contains(x, y)) {
                 return x;
@@ -187,9 +186,5 @@ public class Bandada {
     public int getCoordenadaDisparoY() {
         return limiteVertical;
     }
-
-    
-    
-
 
 }
