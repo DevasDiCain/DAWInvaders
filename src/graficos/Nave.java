@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 
 public class Nave extends Entidad {
 
-    private static int velocidad = 8;
+    private static int velocidad = 8;//Variable que determinará cuantas casillas avanzaremos (velocidad)...X
     private static final int TECLA_P = 0x00000011;//Asignamos las teclas utilizando val
     private static final int TECLA_O = 0x00001100;
 
@@ -24,7 +24,7 @@ public class Nave extends Entidad {
     public Nave() {//Constructor que hereda los atributos de la clase Entidad
         super();
         disparando = false;//Estado de disparar OFF
-        keys = 0x00000000;//Establecemos las keys a 0
+        keys = 0x00000000;//Establecemos las keys a 0 y tomará el valor de la tecla P u O que será 0x00000011 y 0x00001100
     }
 
     public void iniciar() {//Mostramos nuestra nave por la pantalla
