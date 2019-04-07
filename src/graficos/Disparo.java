@@ -47,9 +47,18 @@ public class Disparo extends Entidad {
         activado = false;
     }
 
-    public void actualizar() {//Actualiza el estado del disparo
-        if (!activado) {
+    public void actualizar() {
+        if (!activado) {//Si no está activado no hace nada
             return;
         }
+
+        if (tipo == Tipo.NAVE) {//Si es de tipo jugador actualizamos la posición con la velocidad de la nave
+            y -= VELOCIDAD_NAVE;
+        }
+
+        if (tipo == Tipo.ENEMIGO) {//Si es de tipo nave enemiga actualizamos la posición con la velocidad de la nave enemiga
+            y += VELOCIDAD_ENEMIGO;
+        }
+    }
 
 }
