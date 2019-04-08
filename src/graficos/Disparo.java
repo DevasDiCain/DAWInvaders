@@ -22,10 +22,10 @@ public class Disparo extends Entidad {
     public Disparo(Tipo t) {//Constructor del disparo a efectuar según el tipo de disparo que queramos
         super();
         if (t == Tipo.ENEMIGO) {
-            setImagen("disparo_enemigo.png");//Creamos el disparo de las naves enemigas
+            setImagen("/recursos/disparo_enemigo.png");//Creamos el disparo de las naves enemigas
         }
         if (t == Tipo.NAVE) {
-            setImagen("disparo.png");//Creamos el disparo de nuestras naves
+            setImagen("/recursos/disparo.png");//Creamos el disparo de nuestras naves
         }
         tipo = t;
         x = 0;

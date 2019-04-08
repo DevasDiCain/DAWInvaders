@@ -91,7 +91,15 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         nave.actualizar();
+        disparoNave.actualizar();
+        for (Disparo d: disparosEnemigo) {
+            d.actualizar();
+        }
+        bandada.actualizar();
+        gestionarDisparos();
+        gestionarColisiones();
+        repaint();
     }
 
     //AQUI CONTROLAREMOS LOS DISPAROS Y LAS COLISIONES GRACIAS A LOS MÉTODOS IMPLEMENTADOS EN LAS CLASES RESPECTIVAS

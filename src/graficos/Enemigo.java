@@ -47,15 +47,15 @@ public class Enemigo extends Entidad {
         activo = true;//Lo mostramos
 
         if (t == Tipo.TIPO_1) {//Le damos una visualización a cada enemigo dependiendo del tipo que sea
-            setImagen("enemigo1.png");
+            setImagen("/recursos/enemigo1.png");
         }
 
         if (t == Tipo.TIPO_2) {
-            setImagen("enemigo2.png");
+            setImagen("/recursos/enemigo2.png");
         }
 
         if (t == Tipo.TIPO_3) {
-            setImagen("enemigo3.png");
+            setImagen("/recursos/vico.png");
         }
     }
 

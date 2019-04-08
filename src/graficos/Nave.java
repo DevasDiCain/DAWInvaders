@@ -28,7 +28,7 @@ public class Nave extends Entidad {
     }
 
     public void iniciar() {//Mostramos nuestra nave por la pantalla
-        setImagen("nave.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+        setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
@@ -53,12 +53,12 @@ public class Nave extends Entidad {
 
         char tecla = evento.getKeyChar();
 
-        if ((tecla == 'o' || tecla == 'O')) {//Podríamos convertirlo a lowcase o upcase pero por rapidez lo hacemos así
+        if ((tecla == 'a' || tecla == 'A')) {//Podríamos convertirlo a lowcase o upcase pero por rapidez lo hacemos así
             desplazamientoHorizontal = -velocidad;
             keys = keys | TECLA_O;
         }
 
-        if ((tecla == 'p' || tecla == 'P')) {
+        if ((tecla == 'd' || tecla == 'D')) {
             desplazamientoHorizontal = velocidad;
             keys = keys | TECLA_P;
         }
@@ -72,11 +72,11 @@ public class Nave extends Entidad {
 
         char tecla = evento.getKeyChar();
 
-        if (tecla == 'o' || tecla == 'O') {
+        if (tecla == 'a' || tecla == 'A') {
             keys = keys ^ TECLA_O;
         }
 
-        if (tecla == 'p' || tecla == 'P'){
+        if (tecla == 'd' || tecla == 'D'){
             keys = keys ^ TECLA_P;
         }
     }
