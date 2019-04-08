@@ -55,7 +55,7 @@ public class Enemigo extends Entidad {
         }
 
         if (t == Tipo.TIPO_3) {
-            setImagen("/recursos/vico.png");
+            setImagen("/recursos/enemigo3.png");
         }
     }
 
