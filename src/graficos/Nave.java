@@ -14,10 +14,12 @@ import java.awt.event.KeyEvent;
 
 public class Nave extends Entidad {
 
-    private static int velocidad = 8;//Variable que determinará cuantas casillas avanzaremos (velocidad)...X
-    private static final int TECLA_P = 0x00000011;//Asignamos las teclas utilizando val
-    private static final int TECLA_O = 0x00001100;
+    public static int velocidad = 8;//Variable que determinará cuantas casillas avanzaremos (velocidad)...X
+    private static final int TECLA_D = 0x00000011;//Asignamos las teclas utilizando val
+    private static final int TECLA_A = 0x00001100;
 
+   
+    
     private int keys;
     private boolean disparando;
 
@@ -28,7 +30,7 @@ public class Nave extends Entidad {
     }
 
     public void iniciar() {//Mostramos nuestra nave por la pantalla
-        setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+        setImagen("/recursos/nave1.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
@@ -36,8 +38,8 @@ public class Nave extends Entidad {
     public void actualizar() {//Metodo heredado que actualiza la posición de nuestra nave
 
         if (keys == 0) desplazamientoHorizontal = 0;
-        if (keys == TECLA_P) desplazamientoHorizontal = velocidad;//Si pulsamos P nos movemos a la derecha
-        if (keys == TECLA_O) desplazamientoHorizontal = -velocidad;//Si pulsamos O nos movemos a la izquierda
+        if (keys == TECLA_D) desplazamientoHorizontal = velocidad;//Si pulsamos P nos movemos a la derecha
+        if (keys == TECLA_A) desplazamientoHorizontal = -velocidad;//Si pulsamos O nos movemos a la izquierda
 
         x += desplazamientoHorizontal;//controlamos el desplazamiento en X
 
@@ -55,12 +57,12 @@ public class Nave extends Entidad {
 
         if ((tecla == 'a' || tecla == 'A')) {//Podríamos convertirlo a lowcase o upcase pero por rapidez lo hacemos así
             desplazamientoHorizontal = -velocidad;
-            keys = keys | TECLA_O;
+            keys = keys | TECLA_A;
         }
 
         if ((tecla == 'd' || tecla == 'D')) {
             desplazamientoHorizontal = velocidad;
-            keys = keys | TECLA_P;
+            keys = keys | TECLA_D;
         }
 
         if (evento.getKeyCode() == KeyEvent.VK_SPACE) {//Controlamos el disparo con el ESPACIO
@@ -73,11 +75,11 @@ public class Nave extends Entidad {
         char tecla = evento.getKeyChar();
 
         if (tecla == 'a' || tecla == 'A') {
-            keys = keys ^ TECLA_O;
+            keys = keys ^ TECLA_A;
         }
 
         if (tecla == 'd' || tecla == 'D'){
-            keys = keys ^ TECLA_P;
+            keys = keys ^ TECLA_D;
         }
     }
 
@@ -96,6 +98,8 @@ public class Nave extends Entidad {
         }
         return false;
     }
+    
+    
 
 
 }

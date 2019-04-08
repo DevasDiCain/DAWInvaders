@@ -24,10 +24,11 @@ public class Pantalla extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Habilitamos la salida del programa con la X superior/derecha
         setSize(ANCHO, ALTO);//Le damos el tamaño a nuestra pantalla
         setLocationRelativeTo(null);
-        setTitle("Space Invaders..........By Devas");
+        setTitle("DAW Invaders..........By Devas");
         setResizable(false);//Evitamos que puedan maximizarlo o minimizarlo
         setVisible(true);//Lo ponemos visible
         setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
+        
     }
 
     public static void main(String[] args)

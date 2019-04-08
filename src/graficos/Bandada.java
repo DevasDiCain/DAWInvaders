@@ -54,10 +54,10 @@ public class Bandada {
         IZQUIERDA, DERECHA
     }
 
-    public Bandada() {//Constructor que inicia los parámetors que tendrá la bandada
+    public Bandada() {//Constructor que inicia los parámetros que tendrá la bandada
 
-        distHorizontal = 32 + 16;
-        distVertical = 24 + 16;
+        distHorizontal = 32 + 16;//La distancia hasta los lados
+        distVertical = 24 + 16;//La distancia hasta el top/bottom
 
         desplHorizontal = VELOCIDAD_HORIZONTAL;
         desplVertical = 0;
@@ -83,7 +83,7 @@ public class Bandada {
             posicionHorizontal = (Pantalla.ANCHO - (distHorizontal * COLUMNAS)) / 2;
             posicionVertical += distVertical;
 
-            switch (i % 3) {
+            switch (i % 4) {
                 case 0:
                     t = Enemigo.Tipo.TIPO_1;
                     break;
@@ -92,6 +92,9 @@ public class Bandada {
                     break;
                 case 2:
                     t = Enemigo.Tipo.TIPO_3;
+                    break;
+                case 3:
+                    t = Enemigo.Tipo.TIPO_VICO;
                     break;
             }
 
@@ -149,7 +152,7 @@ public class Bandada {
     public boolean comprobarColision(Rectangle rect) {//Comprobamos si las balas colisiona con un elemento inferior o no
         for (Enemigo e : enemigos) {
             Rectangle r = new Rectangle(e.getX(), e.getY(), e.getAlto(), e.getAncho());
-            if (r.intersects(rect) && e.isActivo()) {
+            if (r.intersects(rect) && e.isActivo()) {//Si el rectangulo colisciona con el otro
                 if (e.isDisparable() && e.getFila() != 0) {
                     legarDisparo(e);
                 }
@@ -162,10 +165,10 @@ public class Bandada {
 
     private void legarDisparo(Enemigo e) {//Cedemos el disparo si colisionan
         int filas = e.getFila();
-        while (filas != 0) {
+        while (filas != 0) {//Mientras que halla más de 1 fila de enemigos
             Enemigo ee = enemigos.get(enemigos.indexOf(e) - COLUMNAS);
             if (ee.isActivo()) {
-                ee.setDisparable(true);
+                ee.setDisparable(true);//Si la fila inferior ya no está , entonces podrá ser destruido
                 return;
             }
             filas--;

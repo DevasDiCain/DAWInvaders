@@ -34,7 +34,7 @@ public class Enemigo extends Entidad {
     }
 
     public enum Tipo {//Creo una clase tipo Enum para crear varios tipos de enemigos, mediante esta clase podremos asignarles una imagen en el constuctor
-        TIPO_1, TIPO_2, TIPO_3
+        TIPO_1, TIPO_2, TIPO_3 , TIPO_VICO
     }
 
     public Enemigo(Tipo t, int fila, int columna) {//Constructor que hereda de Entidad
@@ -56,6 +56,9 @@ public class Enemigo extends Entidad {
 
         if (t == Tipo.TIPO_3) {
             setImagen("/recursos/enemigo3.png");
+        }
+        if (t == Tipo.TIPO_VICO){
+            setImagen("/recursos/salva.png");
         }
     }
 

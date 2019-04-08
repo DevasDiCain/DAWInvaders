@@ -37,7 +37,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         disparoNave = new Disparo(Disparo.Tipo.NAVE);
         disparosEnemigo = new ArrayList<Disparo>();
 
-        addKeyListener(new KeyAdapter() {//Añadimos un keylistener (con este método nuestor programa podrá reconocer las teclas pulsadas (O ...P))
+        addKeyListener(new KeyAdapter() {//Añadimos un keylistener (con este método nuestor programa podrá reconocer las teclas pulsadas (A ...D))
             @Override
             public void keyPressed(KeyEvent evento) {
                 nave.teclaPulsada(evento);
@@ -90,7 +90,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     }
     
     @Override
-    public void actionPerformed(ActionEvent ae) {
+    public void actionPerformed(ActionEvent ae) {//Controlamos el evento sucedido al pulsar ESPACIO 
          nave.actualizar();
         disparoNave.actualizar();
         for (Disparo d: disparosEnemigo) {
@@ -125,7 +125,10 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
 
         for (Disparo d: disparosEnemigo) {
             Rectangle r = new Rectangle(d.getX(), d.getY(), d.getAlto(), d.getAncho());//Le asignamos una zona a los disparos enemigos
-            nave.comprobarColision(r);//Comprobamos si le dan a nuestra nave
+            if(nave.comprobarColision(r)){//Comprobamos si le dan a nuestra nave
+              this.setVisible(false);
+              
+            }
         }
     }
     private void gestionarDisparos() {//Este método controlará los disparos
@@ -135,7 +138,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
         }
 
-        if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+        if (new Random().nextInt(10) == 2) {//Suceso aleatorio que controlará los disparos enemigos
             bandada.getDisparo(disparosEnemigo);
         }
 
