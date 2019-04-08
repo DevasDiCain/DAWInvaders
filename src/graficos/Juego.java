@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.util.Random;
 
 /**
  *
@@ -118,6 +119,18 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             Rectangle r = new Rectangle(d.getX(), d.getY(), d.getAlto(), d.getAncho());//Le asignamos una zona a los disparos enemigos
             nave.comprobarColision(r);//Comprobamos si le dan a nuestra nave
         }
+    }
+    private void gestionarDisparos() {//Este método controlará los disparos
+        if (nave.getDisparando() && !disparoNave.estaActivado()) {//Si nuestra nave no está disparando y disparo de la nave tampoco
+            disparoNave.setPosicion(nave.getX() + (nave.getAncho() / 2) - 5, nave.getY() + 2);//El disparo efectuado tomará la posición X de la posición de la nave (X) más la mitad del ancho de la nave y el alto de la nave 
+            disparoNave.activar();//Activamos el disparo
+            nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
+        }
+
+        if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+            bandada.getDisparo(disparosEnemigo);
+        }
+
     }
 
 }

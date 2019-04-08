@@ -28,8 +28,8 @@ public class Nave extends Entidad {
     }
 
     public void iniciar() {//Mostramos nuestra nave por la pantalla
-        setImagen("nave.png");//Imagen de nuestra nave
-        setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla
+        setImagen("nave.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+        setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
     @Override

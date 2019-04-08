@@ -14,8 +14,8 @@ import javax.swing.ImageIcon;
  */
 public abstract class Entidad {//Esta clase será Padre (de todos los elementos "gráficos" o tangibles de nuestro programa) y abstracta
 
-    protected int x;
-    protected int y;
+    protected int x;//Ancho
+    protected int y;//Alto
 
     protected int alto;//Tamaño de nuestra entidad (lo que ocupa)
     protected int ancho;
