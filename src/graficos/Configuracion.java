@@ -17,7 +17,7 @@ public class Configuracion extends javax.swing.JFrame{
     /**
      * Creates new form Configuracion
      */
-    
+    private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/icono.png"));//Añadimos el icono que queramos
     public ImageIcon getImagenEscala(String ruta, int ancho, int alto){
   ImageIcon imagenOriginal = new ImageIcon(getClass().getClassLoader().getResource(ruta));
   return new ImageIcon(imagenOriginal.getImage().getScaledInstance(ancho, alto, java.awt.Image.SCALE_DEFAULT));
@@ -28,6 +28,7 @@ public class Configuracion extends javax.swing.JFrame{
         setLocationRelativeTo(null);//Ajusta la ventana al centro del escritorio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
         setResizable(true);//Impedir el reajuste de la pantalla
+        setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -198,12 +199,14 @@ public class Configuracion extends javax.swing.JFrame{
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void dificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadActionPerformed
- 
-        // TODO add your handling code here:
+      
+        // DIFICULTAD
     }//GEN-LAST:event_dificultadActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // boton comenzar
+        new Pantalla();
+        setVisible(false);
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
