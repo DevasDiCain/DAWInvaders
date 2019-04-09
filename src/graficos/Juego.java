@@ -138,7 +138,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
         }
 
-        if (new Random().nextInt(10) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+        if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
             bandada.getDisparo(disparosEnemigo);
         }
 
