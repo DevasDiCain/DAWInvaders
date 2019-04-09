@@ -31,6 +31,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Disparo disparoNave;//Nuestros disparos
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
 
+    private int nivel = 100;//NIVEL FACIL
     public Juego() {
         nave = new Nave();
         bandada = new Bandada();
@@ -97,7 +98,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             d.actualizar();
         }
         bandada.actualizar();
-        gestionarDisparos();
+        gestionarDisparos(nivel);
         gestionarColisiones();
         repaint();
     }
@@ -131,17 +132,37 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             }
         }
     }
-    private void gestionarDisparos() {//Este método controlará los disparos
+    private void gestionarDisparos(int nivel) {//Este método controlará los disparos
         if (nave.getDisparando() && !disparoNave.estaActivado()) {//Si nuestra nave no está disparando y disparo de la nave tampoco
             disparoNave.setPosicion(nave.getX() + (nave.getAncho() / 2) - 5, nave.getY() + 2);//El disparo efectuado tomará la posición X de la posición de la nave (X) más la mitad del ancho de la nave y el alto de la nave 
             disparoNave.activar();//Activamos el disparo
             nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
         }
 
-        if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+        if (new Random().nextInt(nivel) == 2) {//Suceso aleatorio que controlará los disparos enemigos
             bandada.getDisparo(disparosEnemigo);
         }
 
+    }
+    
+    public void seleccionarNivel(int nivel){
+        
+        switch(nivel){
+            case 0: this.nivel=100;//Fácil
+                    break;
+                    
+            case 1: this.nivel=70;//Medio
+                    break;
+            
+            case 2: this.nivel=40;//Dificil
+                    break;
+                    
+            case 3: this.nivel=10;//DAW
+                    break;
+             
+            default: this.nivel=100;
+                    break;
+        }
     }
 
 }
