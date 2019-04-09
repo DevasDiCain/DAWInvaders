@@ -23,8 +23,6 @@ public class Configuracion extends javax.swing.JPanel {
  }
     public Configuracion() {
         initComponents();
-        Configuracion x = new Configuracion();
-        fondo.setIcon(x.getImagenEscala("/recursos/fondoInvaders.jpg", ABORT, WIDTH));
     }
 
     /**
@@ -36,12 +34,30 @@ public class Configuracion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         cabezera = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        fondo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cabezera1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+
+        jButton1.setText("jButton1");
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -52,19 +68,23 @@ public class Configuracion extends javax.swing.JPanel {
         cabezera.setText(" DAW INVADERS");
         cabezera.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
         cabezera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 413, 86));
+        add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
+        jTextField1.setBackground(new java.awt.Color(51, 102, 255));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("-Introduzca Su Alias");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 165, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 165, 20));
 
+        jLabel1.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/disparo.png"))); // NOI18N
         jLabel1.setText("Seleccione el grado de dificultad");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 133, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fácil", "Medio", "Dificil", "DAW" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,14 +92,59 @@ public class Configuracion extends javax.swing.JPanel {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 130, -1, -1));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, -1, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
-        add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 290, 150));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 280, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 280, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 280, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 280, -1));
+
+        cabezera1.setBackground(new java.awt.Color(0, 0, 0));
+        cabezera1.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
+        cabezera1.setForeground(new java.awt.Color(255, 51, 51));
+        cabezera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/salva.png"))); // NOI18N
+        cabezera1.setText(" DAW INVADERS");
+        cabezera1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
+        cabezera1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        add(cabezera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 51));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/jugadorChiri.png"))); // NOI18N
+        jButton2.setText("COMENZAR!!!");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 200, 50));
+
+        jLabel8.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("By...Devas");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 70, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 110));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
+        jLabel10.setText("jLabel10");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -90,13 +155,27 @@ public class Configuracion extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cabezera;
-    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel cabezera1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
