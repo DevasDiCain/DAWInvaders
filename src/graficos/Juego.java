@@ -32,8 +32,10 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Disparo disparoNave;//Nuestros disparos
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
     private Dificultad dificultad;
+    private String nombre;
 
-    public Juego(Dificultad nivel) {
+    public Juego(Dificultad nivel, String alias) {
+        nombre = alias;
         dificultad = nivel;
         nave = new Nave();
         bandada = new Bandada();

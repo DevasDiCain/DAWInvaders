@@ -203,7 +203,7 @@ public class Configuracion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void dificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadActionPerformed
@@ -215,18 +215,18 @@ public class Configuracion extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // boton comenzar
         if (dificultad.getSelectedItem().equals("Fácil")) {
-            new Pantalla(Dificultad.FACIL);
+            new Pantalla(Dificultad.FACIL, jTextField1.getText());
         }
         if (dificultad.getSelectedItem().equals("Medio")) {
-            new Pantalla(Dificultad.MEDIO);
+            new Pantalla(Dificultad.MEDIO, jTextField1.getText());
         }
         if (dificultad.getSelectedItem().equals("Dificil")) {
-            new Pantalla(Dificultad.DIFICIL);
+            new Pantalla(Dificultad.DIFICIL, jTextField1.getText());
         }
         if (dificultad.getSelectedItem().equals("DAW")) {
-            new Pantalla(Dificultad.DAW);
+            new Pantalla(Dificultad.DAW, jTextField1.getText());
         }
-
+        System.out.println(dificultad.getSelectedItem()+jTextField1.getText());
         setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
