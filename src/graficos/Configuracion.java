@@ -120,30 +120,34 @@ public class Configuracion extends javax.swing.JFrame {
         cabezera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
-        jTextField1.setBackground(new java.awt.Color(51, 102, 255));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("-Introduzca Su Alias");
+        jTextField1.setBackground(new java.awt.Color(252, 255, 51));
+        jTextField1.setFont(new java.awt.Font("Purisa", 1, 12)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(238, 4, 4));
+        jTextField1.setText("Introduzca Su Alias");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 165, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 165, 30));
 
         jLabel1.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel1.setFont(new java.awt.Font("FreeSans", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/disparo.png"))); // NOI18N
         jLabel1.setText("Seleccione el grado de dificultad");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         dificultad.setBackground(new java.awt.Color(255, 51, 51));
+        dificultad.setFont(new java.awt.Font("Chilanka", 1, 14)); // NOI18N
+        dificultad.setForeground(new java.awt.Color(159, 8, 39));
         dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fácil", "Medio", "Dificil", "DAW" }));
         dificultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dificultadActionPerformed(evt);
             }
         });
-        getContentPane().add(dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        getContentPane().add(dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
