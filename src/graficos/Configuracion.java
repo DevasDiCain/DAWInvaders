@@ -12,24 +12,27 @@ import javax.swing.JFrame;
  *
  * @author José
  */
-public class Configuracion extends javax.swing.JFrame{
+public class Configuracion extends javax.swing.JFrame {
 
     /**
      * Creates new form Configuracion
      */
     private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/icono.png"));//Añadimos el icono que queramos
-    public ImageIcon getImagenEscala(String ruta, int ancho, int alto){
-  ImageIcon imagenOriginal = new ImageIcon(getClass().getClassLoader().getResource(ruta));
-  return new ImageIcon(imagenOriginal.getImage().getScaledInstance(ancho, alto, java.awt.Image.SCALE_DEFAULT));
- }
+
+    public ImageIcon getImagenEscala(String ruta, int ancho, int alto) {
+        ImageIcon imagenOriginal = new ImageIcon(getClass().getClassLoader().getResource(ruta));
+        return new ImageIcon(imagenOriginal.getImage().getScaledInstance(ancho, alto, java.awt.Image.SCALE_DEFAULT));
+    }
+
     public Configuracion() {
         initComponents();
-        this.setSize(573, 490);
+        this.setSize(560, 490);
         setLocationRelativeTo(null);//Ajusta la ventana al centro del escritorio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
         setResizable(true);//Impedir el reajuste de la pantalla
         setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -59,6 +62,7 @@ public class Configuracion extends javax.swing.JFrame{
             new Configuracion().setVisible(true);
         });
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,7 +109,7 @@ public class Configuracion extends javax.swing.JFrame{
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cabezera.setBackground(new java.awt.Color(0, 0, 0));
         cabezera.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
@@ -114,7 +118,7 @@ public class Configuracion extends javax.swing.JFrame{
         cabezera.setText(" DAW INVADERS");
         cabezera.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
         cabezera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
+        getContentPane().add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
         jTextField1.setBackground(new java.awt.Color(51, 102, 255));
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,13 +128,13 @@ public class Configuracion extends javax.swing.JFrame{
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 165, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 165, 30));
 
         jLabel1.setBackground(new java.awt.Color(51, 102, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/disparo.png"))); // NOI18N
         jLabel1.setText("Seleccione el grado de dificultad");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         dificultad.setBackground(new java.awt.Color(255, 51, 51));
         dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fácil", "Medio", "Dificil", "DAW" }));
@@ -139,24 +143,24 @@ public class Configuracion extends javax.swing.JFrame{
                 dificultadActionPerformed(evt);
             }
         });
-        add(dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+        getContentPane().add(dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 280, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 280, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 280, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 280, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 280, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 280, -1));
 
         cabezera1.setBackground(new java.awt.Color(0, 0, 0));
         cabezera1.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
@@ -165,7 +169,7 @@ public class Configuracion extends javax.swing.JFrame{
         cabezera1.setText(" DAW INVADERS");
         cabezera1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
         cabezera1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        add(cabezera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
+        getContentPane().add(cabezera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -178,20 +182,20 @@ public class Configuracion extends javax.swing.JFrame{
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 200, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 200, 50));
 
         jLabel8.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("By...Devas");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 70, 30));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 80, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 110));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 110));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel10.setText("jLabel10");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 110));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -199,15 +203,28 @@ public class Configuracion extends javax.swing.JFrame{
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void dificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadActionPerformed
-      
+
         // DIFICULTAD
+
     }//GEN-LAST:event_dificultadActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // boton comenzar
-        new Pantalla();
+        if (dificultad.getSelectedItem().equals("Fácil")) {
+            new Pantalla(Dificultad.FACIL);
+        }
+        if (dificultad.getSelectedItem().equals("Medio")) {
+            new Pantalla(Dificultad.MEDIO);
+        }
+        if (dificultad.getSelectedItem().equals("Dificil")) {
+            new Pantalla(Dificultad.DIFICIL);
+        }
+        if (dificultad.getSelectedItem().equals("DAW")) {
+            new Pantalla(Dificultad.DAW);
+        }
+
         setVisible(false);
-       
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

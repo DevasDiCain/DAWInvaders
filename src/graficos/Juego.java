@@ -26,13 +26,15 @@ import java.util.Random;
  */
 public class Juego extends JPanel implements ActionListener {//Aquí vendrá la chicha de nuestro juego
 //La clase Juego extienda la pantalla Jpanel e implementa el reconocimiento de acciones
+
     private Nave nave;//Creamos nuestra nave    
     private Bandada bandada;//Creamos un grupo de enemigos
     private Disparo disparoNave;//Nuestros disparos
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
+    private Dificultad dificultad;
 
-    private int nivel = 100;//NIVEL FACIL
-    public Juego() {
+    public Juego(Dificultad nivel) {
+        dificultad = nivel;
         nave = new Nave();
         bandada = new Bandada();
         disparoNave = new Disparo(Disparo.Tipo.NAVE);
@@ -60,7 +62,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         iniciarJuego();//Iniciamos el juego
     }
 
-      public void iniciarJuego() {
+    public void iniciarJuego() {
         nave.iniciar();
         bandada.iniciar();
     }
@@ -68,19 +70,19 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     public void paint(Graphics g) {//Creamos el método que nos dibujará en pantalla los elementos contenidos  en los atributos de nuestro juego (nuestra nave, nuestro disparo, enemigos, disparo de enemigos...)
         super.paint(g);//Hereda de Jpanel
 
-        Graphics2D g2d = (Graphics2D)g;//Instanciamos la clase Graphics2d del paquete atw de java
+        Graphics2D g2d = (Graphics2D) g;//Instanciamos la clase Graphics2d del paquete atw de java
         g2d.drawImage(nave.getImagen(), nave.getX(), nave.getY(), this);//Dibujamos nuestra nave
 
         if (disparoNave.estaActivado()) {
             g2d.drawImage(disparoNave.getImagen(), disparoNave.getX(), disparoNave.getY(), this);//Si nuestra nave está disparando dibuja sus disparos
         }
 
-        for (Disparo d: disparosEnemigo) {//Si el enemigos nos dispara , dibujará sus disparos
+        for (Disparo d : disparosEnemigo) {//Si el enemigos nos dispara , dibujará sus disparos
             d.actualizar();
             g2d.drawImage(d.getImagen(), d.getX(), d.getY(), this);
         }
 
-        for (Enemigo e: bandada.getEnemigos()) {//Dibuja la bandada enemiga
+        for (Enemigo e : bandada.getEnemigos()) {//Dibuja la bandada enemiga
             if (e.isActivo()) {
                 g2d.drawImage(e.getImagen(), e.getX(), e.getY(), this);
             }
@@ -89,16 +91,16 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         Toolkit.getDefaultToolkit().sync();////Sincronizamos el estado de los graficos/ Al ser una clase abstracta no podemos instanciarla
         g.dispose();//Liberamos los recursos del sistema utilizados por el elemento Graphics
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {//Controlamos el evento sucedido al pulsar ESPACIO 
-         nave.actualizar();
+        nave.actualizar();
         disparoNave.actualizar();
-        for (Disparo d: disparosEnemigo) {
+        for (Disparo d : disparosEnemigo) {
             d.actualizar();
         }
         bandada.actualizar();
-        gestionarDisparos(nivel);
+        gestionarDisparos(dificultad);
         gestionarColisiones();
         repaint();
     }
@@ -117,52 +119,57 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         }
 
         Iterator<Disparo> i = disparosEnemigo.iterator();//Esto no es más que recorrer varias veces la lista de disparosEnemigos
-        while(i.hasNext()) {//Mientras que tengamos un disparo en la lista disparosEnemigos....(hasnext devuelve true si encuentra un elemento en la lista (DISPAROS))
+        while (i.hasNext()) {//Mientras que tengamos un disparo en la lista disparosEnemigos....(hasnext devuelve true si encuentra un elemento en la lista (DISPAROS))
             Disparo d = i.next();//Devuelve el siguiente elemento de la lista (disparosEnemigos), que sería el siguiente disparo
             if (d.getY() > Pantalla.ALTO) {//Si el disparo se sale de Y
                 i.remove();//Lo eliminamos
             }
         }
 
-        for (Disparo d: disparosEnemigo) {
+        for (Disparo d : disparosEnemigo) {
             Rectangle r = new Rectangle(d.getX(), d.getY(), d.getAlto(), d.getAncho());//Le asignamos una zona a los disparos enemigos
-            if(nave.comprobarColision(r)){//Comprobamos si le dan a nuestra nave
-              this.setVisible(false);
-              
+            if (nave.comprobarColision(r)) {//Comprobamos si le dan a nuestra nave
+                this.setVisible(false);
+
             }
         }
     }
-    private void gestionarDisparos(int nivel) {//Este método controlará los disparos
+
+    private void gestionarDisparos(Dificultad nivel) {//Este método controlará los disparos
         if (nave.getDisparando() && !disparoNave.estaActivado()) {//Si nuestra nave no está disparando y disparo de la nave tampoco
             disparoNave.setPosicion(nave.getX() + (nave.getAncho() / 2) - 5, nave.getY() + 2);//El disparo efectuado tomará la posición X de la posición de la nave (X) más la mitad del ancho de la nave y el alto de la nave 
             disparoNave.activar();//Activamos el disparo
             nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
         }
+        switch (nivel) {
+            case FACIL:
+                if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+                    bandada.getDisparo(disparosEnemigo);
+                }
+                break;
+            case MEDIO:
+                if (new Random().nextInt(60) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+                    bandada.getDisparo(disparosEnemigo);
+                }
+                break;
+            case DIFICIL:
+                if (new Random().nextInt(30) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+                    bandada.getDisparo(disparosEnemigo);
+                }
+                break;
+            case DAW:
+                if (new Random().nextInt(10) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+                    bandada.getDisparo(disparosEnemigo);
+                }
+                break;
 
-        if (new Random().nextInt(nivel) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-            bandada.getDisparo(disparosEnemigo);
+            default:
+                if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
+                    bandada.getDisparo(disparosEnemigo);
+                }
+                break;
         }
 
-    }
-    
-    public void seleccionarNivel(int nivel){
-        
-        switch(nivel){
-            case 0: this.nivel=100;//Fácil
-                    break;
-                    
-            case 1: this.nivel=70;//Medio
-                    break;
-            
-            case 2: this.nivel=40;//Dificil
-                    break;
-                    
-            case 3: this.nivel=10;//DAW
-                    break;
-             
-            default: this.nivel=100;
-                    break;
-        }
     }
 
 }
