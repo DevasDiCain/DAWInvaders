@@ -17,7 +17,7 @@ public class Configuracion extends javax.swing.JFrame {
     /**
      * Creates new form Configuracion
      */
-    private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/icono.png"));//Añadimos el icono que queramos
+    private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/iconoDaw.png"));//Añadimos el icono que queramos
 
     public ImageIcon getImagenEscala(String ruta, int ancho, int alto) {
         ImageIcon imagenOriginal = new ImageIcon(getClass().getClassLoader().getResource(ruta));
@@ -26,10 +26,10 @@ public class Configuracion extends javax.swing.JFrame {
 
     public Configuracion() {
         initComponents();
-        this.setSize(560, 490);
+        this.setSize(560, 487);
         setLocationRelativeTo(null);//Ajusta la ventana al centro del escritorio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
-        setResizable(true);//Impedir el reajuste de la pantalla
+        setResizable(false);//Impedir el reajuste de la pantalla
         setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
     }
 
@@ -76,7 +76,7 @@ public class Configuracion extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        cabezera = new javax.swing.JLabel();
+        cabecera = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         dificultad = new javax.swing.JComboBox<>();
@@ -111,19 +111,20 @@ public class Configuracion extends javax.swing.JFrame {
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cabezera.setBackground(new java.awt.Color(0, 0, 0));
-        cabezera.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
-        cabezera.setForeground(new java.awt.Color(255, 51, 51));
-        cabezera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/salva.png"))); // NOI18N
-        cabezera.setText(" DAW INVADERS");
-        cabezera.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
-        cabezera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(cabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
+        cabecera.setBackground(new java.awt.Color(0, 0, 0));
+        cabecera.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
+        cabecera.setForeground(new java.awt.Color(255, 51, 51));
+        cabecera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/salva.png"))); // NOI18N
+        cabecera.setText(" DAW INVADERS");
+        cabecera.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
+        cabecera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        getContentPane().add(cabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
         jTextField1.setBackground(new java.awt.Color(252, 255, 51));
         jTextField1.setFont(new java.awt.Font("Purisa", 1, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(238, 4, 4));
         jTextField1.setText("Introduzca Su Alias");
+        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -142,6 +143,7 @@ public class Configuracion extends javax.swing.JFrame {
         dificultad.setFont(new java.awt.Font("Chilanka", 1, 14)); // NOI18N
         dificultad.setForeground(new java.awt.Color(159, 8, 39));
         dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fácil", "Medio", "Dificil", "DAW" }));
+        dificultad.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         dificultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dificultadActionPerformed(evt);
@@ -151,19 +153,22 @@ public class Configuracion extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 280, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 280, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 280, -1));
 
         cabezera1.setBackground(new java.awt.Color(0, 0, 0));
@@ -180,7 +185,7 @@ public class Configuracion extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 0, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/jugadorChiri.png"))); // NOI18N
         jButton2.setText("COMENZAR!!!");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -195,10 +200,12 @@ public class Configuracion extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 110));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel10.setText("jLabel10");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 110));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -226,14 +233,14 @@ public class Configuracion extends javax.swing.JFrame {
         if (dificultad.getSelectedItem().equals("DAW")) {
             new Pantalla(Dificultad.DAW, jTextField1.getText());
         }
-        System.out.println(dificultad.getSelectedItem()+jTextField1.getText());
+        System.out.println("Dificultad -> " + dificultad.getSelectedItem() + "\n Alias     -> " + jTextField1.getText());
         setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cabezera;
+    private javax.swing.JLabel cabecera;
     private javax.swing.JLabel cabezera1;
     private javax.swing.JComboBox<String> dificultad;
     private javax.swing.JButton jButton1;

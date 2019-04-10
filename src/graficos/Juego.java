@@ -33,8 +33,10 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
     private Dificultad dificultad;
     private String nombre;
+    public int puntuacion;
 
     public Juego(Dificultad nivel, String alias) {
+        puntuacion = 0 ;
         nombre = alias;
         dificultad = nivel;
         nave = new Nave();
@@ -105,6 +107,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         gestionarDisparos(dificultad);
         gestionarColisiones();
         repaint();
+        
     }
 
     //AQUI CONTROLAREMOS LOS DISPAROS Y LAS COLISIONES GRACIAS A LOS MÉTODOS IMPLEMENTADOS EN LAS CLASES RESPECTIVAS
@@ -117,6 +120,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             Rectangle r = new Rectangle(disparoNave.getX(), disparoNave.getY(), disparoNave.getAlto(), disparoNave.getAncho());//La clase Rectangle especifica un área en unas cordenadas de espacio (x,y). Podemos definirlo dandole un alto y un ancho y el espacio que ocupa
             if (bandada.comprobarColision(r)) {//Y la bandada enemiga detecta colisión
                 disparoNave.desactivar();//la bala desaparecerá
+                puntuacion++;
             }
         }
 
