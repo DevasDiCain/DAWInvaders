@@ -35,7 +35,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private String nombre;
     public int puntuacion;
 
-    public Juego(Dificultad nivel, String alias) {
+    public Juego(Dificultad nivel, String alias, Modo modo) {
         puntuacion = 0 ;
         nombre = alias;
         dificultad = nivel;
@@ -63,12 +63,12 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         Timer timer = new Timer(15, this);//Comenzamos un contador de 15
         timer.start();//Lo iniciamos
 
-        iniciarJuego();//Iniciamos el juego
+        iniciarJuego(modo);//Iniciamos el juego
     }
 
-    public void iniciarJuego() {
+    public void iniciarJuego(Modo modo) {
         nave.iniciar();
-        bandada.iniciar();
+        bandada.iniciar(modo);
     }
 
     public void paint(Graphics g) {//Creamos el método que nos dibujará en pantalla los elementos contenidos  en los atributos de nuestro juego (nuestra nave, nuestro disparo, enemigos, disparo de enemigos...)

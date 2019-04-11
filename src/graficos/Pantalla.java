@@ -20,9 +20,9 @@ public class Pantalla extends JFrame{
     public static final int ALTO = 480;//Le damos un alto y un ancho a nuestra pantalla
     public static final int ANCHO = 640;
     private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/iconoDaw.png"));//Añadimos el icono que queramos
-    public Pantalla(Dificultad lvl, String alias)
+    public Pantalla(Dificultad lvl, String alias, Modo modo)
     {
-        Juego x = new Juego(lvl,alias);
+        Juego x = new Juego(lvl,alias, modo);
         add(x);//Instanciamos la clase Juego
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Habilitamos la salida del programa con la X superior/derecha
         setSize(ANCHO, ALTO);//Le damos el tamaño a nuestra pantalla
