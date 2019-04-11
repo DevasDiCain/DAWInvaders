@@ -36,7 +36,7 @@ public class Bandada {
 
     private ArrayList<Enemigo> enemigos;//Será el grupo de enemigos que formarán la banda
 
-    public void getDisparo(ArrayList<Disparo> disparos,Modo modo) {//Método que recogerá una lista de disparos  y recorrerá la lista de enemigos en busca de a cuales puede golpear
+    public void getDisparo(ArrayList<Disparo> disparos) {//Método que recogerá una lista de disparos  y recorrerá la lista de enemigos en busca de a cuales puede golpear
         ArrayList<Enemigo> enemigosDisparables = new ArrayList<Enemigo>();
         for (Enemigo e : enemigos) {
             if (e.isDisparable() && e.isActivo()) {
@@ -44,7 +44,7 @@ public class Bandada {
             }
         }
         Enemigo e = enemigosDisparables.get(new Random().nextInt(enemigosDisparables.size()));
-        Disparo d = new Disparo(Disparo.Tipo.ENEMIGO,modo);//Añadimos un tipo de disparo
+        Disparo d = new Disparo(Disparo.Tipo.ENEMIGO);//Añadimos un tipo de disparo
         d.setPosicion(e.getX() + (e.getAncho() / 2) + 4, e.getY() + 4);
         d.activar();
         disparos.add(d);
