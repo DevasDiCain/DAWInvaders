@@ -25,7 +25,7 @@ public class Disparo extends Entidad {
             setImagen("/recursos/disparo_enemigo.png");//Creamos el disparo de las naves enemigas
         }
         if (t == Tipo.NAVE) {
-            setImagen("/recursos/disparo.png");//Creamos el disparo de nuestras naves
+            setImagen("/recursos/iconoDaw.png");//Creamos el disparo de nuestras naves
         }
         tipo = t;
         x = 0;

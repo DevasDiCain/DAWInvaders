@@ -30,7 +30,7 @@ public class Nave extends Entidad {
     }
 
     public void iniciar() {//Mostramos nuestra nave por la pantalla
-        setImagen("/recursos/nave1.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+        setImagen("/recursos/gabriel.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
