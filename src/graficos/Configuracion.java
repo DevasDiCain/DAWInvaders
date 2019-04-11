@@ -90,7 +90,7 @@ public class Configuracion extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        modo = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -185,7 +185,7 @@ public class Configuracion extends javax.swing.JFrame {
         cabezera1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(cabezera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 51));
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 0, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/jugadorChiri.png"))); // NOI18N
@@ -219,11 +219,11 @@ public class Configuracion extends javax.swing.JFrame {
         jLabel11.setText("Seleccione el modo de juego");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, -1));
 
-        modo.setBackground(new java.awt.Color(255, 255, 51));
-        modo.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        modo.setForeground(new java.awt.Color(255, 51, 0));
-        modo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alumno", "Profesor", "Clasico" }));
-        getContentPane().add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, 30));
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 51));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 51, 0));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alumno", "Profesor", "Clasico" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, 30));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/iconoDaw.png"))); // NOI18N
         jLabel12.setText("jLabel12");
@@ -250,29 +250,44 @@ public class Configuracion extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // boton comenzar
-        if (dificultad.getSelectedItem().equals("Fácil") && modo.getSelectedItem().equals("Alumno")) {
+        //MODO ALUMNO
+        if (dificultad.getSelectedItem().equals("Fácil") && jComboBox1.getSelectedItem().equals("Alumno")) {
             new Pantalla(Dificultad.FACIL, jTextField1.getText(), Modo.MODO_ALUMNO);
         }
-        if (dificultad.getSelectedItem().equals("Medio") && modo.getSelectedItem().equals("Alumno")) {
+        if (dificultad.getSelectedItem().equals("Medio") && jComboBox1.getSelectedItem().equals("Alumno")) {
             new Pantalla(Dificultad.MEDIO, jTextField1.getText(), Modo.MODO_ALUMNO);
         }
-        if (dificultad.getSelectedItem().equals("Dificil") && modo.getSelectedItem().equals("Alumno")) {
+        if (dificultad.getSelectedItem().equals("Dificil") && jComboBox1.getSelectedItem().equals("Alumno")) {
             new Pantalla(Dificultad.DIFICIL, jTextField1.getText(), Modo.MODO_ALUMNO);
         }
-        if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Alumno")) {
+        if (dificultad.getSelectedItem().equals("DAW") && jComboBox1.getSelectedItem().equals("Alumno")) {
             new Pantalla(Dificultad.DAW, jTextField1.getText(), Modo.MODO_ALUMNO);
         }
-        if (dificultad.getSelectedItem().equals("Fácil") && modo.getSelectedItem().equals("Profesor")) {
+        //MODO PROFESOR
+        if (dificultad.getSelectedItem().equals("Fácil") && jComboBox1.getSelectedItem().equals("Profesor")) {
             new Pantalla(Dificultad.FACIL, jTextField1.getText(), Modo.MODO_PROFESOR);
         }
-        if (dificultad.getSelectedItem().equals("Medio") && modo.getSelectedItem().equals("Profesor")) {
+        if (dificultad.getSelectedItem().equals("Medio") && jComboBox1.getSelectedItem().equals("Profesor")) {
             new Pantalla(Dificultad.MEDIO, jTextField1.getText(), Modo.MODO_PROFESOR);
         }
-        if (dificultad.getSelectedItem().equals("Dificil") && modo.getSelectedItem().equals("Profesor")) {
+        if (dificultad.getSelectedItem().equals("Dificil") && jComboBox1.getSelectedItem().equals("Profesor")) {
             new Pantalla(Dificultad.DIFICIL, jTextField1.getText(), Modo.MODO_PROFESOR);
         }
-        if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Profesor")) {
+        if (dificultad.getSelectedItem().equals("DAW") && jComboBox1.getSelectedItem().equals("Profesor")) {
             new Pantalla(Dificultad.DAW, jTextField1.getText(), Modo.MODO_PROFESOR);
+        }
+        //MODO CLASICO
+        if (dificultad.getSelectedItem().equals("Fácil") && jComboBox1.getSelectedItem().equals("Clasico")) {
+            new Pantalla(Dificultad.FACIL, jTextField1.getText(), Modo.MODO_CLASICO);
+        }
+        if (dificultad.getSelectedItem().equals("Medio") && jComboBox1.getSelectedItem().equals("Clasico")) {
+            new Pantalla(Dificultad.MEDIO, jTextField1.getText(), Modo.MODO_CLASICO);
+        }
+        if (dificultad.getSelectedItem().equals("Dificil") && jComboBox1.getSelectedItem().equals("Clasico")) {
+            new Pantalla(Dificultad.DIFICIL, jTextField1.getText(), Modo.MODO_CLASICO);
+        }
+        if (dificultad.getSelectedItem().equals("DAW") && jComboBox1.getSelectedItem().equals("Clasico")) {
+            new Pantalla(Dificultad.DAW, jTextField1.getText(), Modo.MODO_CLASICO);
         }
         System.out.println("Dificultad -> " + dificultad.getSelectedItem() + "\n Alias     -> " + jTextField1.getText());
         setVisible(false);
@@ -286,6 +301,7 @@ public class Configuracion extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dificultad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -302,6 +318,5 @@ public class Configuracion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JComboBox<String> modo;
     // End of variables declaration//GEN-END:variables
 }

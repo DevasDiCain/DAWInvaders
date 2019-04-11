@@ -86,6 +86,21 @@ public class Enemigo extends Entidad {
         if (t == Tipo.TIPO_VICO && modo==Modo.MODO_PROFESOR){
             setImagen("/recursos/gabriel.png");
         }
+        //Clasico
+        if (t == Tipo.TIPO_1 && modo==Modo.MODO_CLASICO) {//Le damos una visualización a cada enemigo dependiendo del tipo que sea
+            setImagen("/recursos/enemigo1.png");
+        }
+
+        if (t == Tipo.TIPO_2 && modo==Modo.MODO_CLASICO) {
+            setImagen("/recursos/enemigo2.png");
+        }
+
+        if (t == Tipo.TIPO_3 && modo==Modo.MODO_CLASICO) {
+            setImagen("/recursos/enemigo3.png");
+        }
+        if (t == Tipo.TIPO_VICO && modo==Modo.MODO_CLASICO){
+            setImagen("/recursos/enemigo1.png");
+        }
     }
     //FIN TEMPORAL
 }

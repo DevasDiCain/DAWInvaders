@@ -35,6 +35,8 @@ public class Nave extends Entidad {
                 break;
             case MODO_PROFESOR:setImagen("/recursos/vico.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
+            case MODO_CLASICO:setImagen("/recursos/nave1.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+                break;
             default: setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
         }

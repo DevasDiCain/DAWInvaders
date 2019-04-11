@@ -120,6 +120,17 @@ public class Bandada {
                         posicionHorizontal += distHorizontal;
                     }
                     break;
+                    case MODO_CLASICO:
+                    for (int j = 0; j < COLUMNAS; ++j) {//Método que controla la posición que tendrá cada enemigo en la bandada
+                        Enemigo enemigo = new Enemigo(t, i, j, modo);
+                        enemigo.setPosicion(posicionHorizontal, posicionVertical);
+                        if (i == FILAS - 1) {
+                            enemigo.setDisparable(true);
+                        }
+                        enemigos.add(enemigo);
+                        posicionHorizontal += distHorizontal;
+                    }
+                    break;
                 default:
                     for (int j = 0; j < COLUMNAS; ++j) {//Método que controla la posición que tendrá cada enemigo en la bandada
                         Enemigo enemigo = new Enemigo(t, i, j, modo);
