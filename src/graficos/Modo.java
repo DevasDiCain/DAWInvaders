@@ -7,7 +7,7 @@ package graficos;
 
 /**
  *
- * @author José
+ * @author DevasDiCain
  */
 public enum Modo {
     MODO_ALUMNO,MODO_PROFESOR,MODO_CLASICO
