@@ -89,6 +89,11 @@ public class Configuracion extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
@@ -180,7 +185,7 @@ public class Configuracion extends javax.swing.JFrame {
         cabezera1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(cabezera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 413, 86));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(255, 255, 51));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 0, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/jugadorChiri.png"))); // NOI18N
@@ -191,22 +196,46 @@ public class Configuracion extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 200, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 200, 50));
 
         jLabel8.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("By...Devas");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 80, 30));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 760, 80, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 110));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 300, 110));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInvaders2.jpg"))); // NOI18N
         jLabel10.setText("jLabel10");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 110));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 260, 110));
+
+        jLabel11.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/gabriel.png"))); // NOI18N
+        jLabel11.setText("Seleccione el modo de juego");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, -1));
+
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 51));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 51, 0));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alumno", "Profesor", "Clasico" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, 30));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/iconoDaw.png"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 30, 40));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel13.setText("jLabel13");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 280, 50));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel14.setText("jLabel13");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 280, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -245,8 +274,13 @@ public class Configuracion extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dificultad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
