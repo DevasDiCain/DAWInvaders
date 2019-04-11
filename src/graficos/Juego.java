@@ -34,6 +34,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Dificultad dificultad;
     private String nombre;
     public int puntuacion;
+    private Modo modo;
 
     public Juego(Dificultad nivel, String alias, Modo modo) {
         puntuacion = 0 ;
@@ -41,7 +42,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         dificultad = nivel;
         nave = new Nave();
         bandada = new Bandada();
-        disparoNave = new Disparo(Disparo.Tipo.NAVE);
+        disparoNave = new Disparo(Disparo.Tipo.NAVE,modo);
         disparosEnemigo = new ArrayList<Disparo>();
 
         addKeyListener(new KeyAdapter() {//Añadimos un keylistener (con este método nuestor programa podrá reconocer las teclas pulsadas (A ...D))
@@ -67,7 +68,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     }
 
     public void iniciarJuego(Modo modo) {
-        nave.iniciar();
+        nave.iniciar(modo);
         bandada.iniciar(modo);
     }
 
@@ -104,7 +105,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             d.actualizar();
         }
         bandada.actualizar();
-        gestionarDisparos(dificultad);
+        gestionarDisparos(dificultad,modo);
         gestionarColisiones();
         repaint();
         
@@ -141,7 +142,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         }
     }
 
-    private void gestionarDisparos(Dificultad nivel) {//Este método controlará los disparos
+    private void gestionarDisparos(Dificultad nivel, Modo modo) {//Este método controlará los disparos
         if (nave.getDisparando() && !disparoNave.estaActivado()) {//Si nuestra nave no está disparando y disparo de la nave tampoco
             disparoNave.setPosicion(nave.getX() + (nave.getAncho() / 2) - 5, nave.getY() + 2);//El disparo efectuado tomará la posición X de la posición de la nave (X) más la mitad del ancho de la nave y el alto de la nave 
             disparoNave.activar();//Activamos el disparo
@@ -150,28 +151,28 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         switch (nivel) {
             case FACIL:
                 if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-                    bandada.getDisparo(disparosEnemigo);
+                    bandada.getDisparo(disparosEnemigo,modo);
                 }
                 break;
             case MEDIO:
                 if (new Random().nextInt(60) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-                    bandada.getDisparo(disparosEnemigo);
+                    bandada.getDisparo(disparosEnemigo,modo);
                 }
                 break;
             case DIFICIL:
                 if (new Random().nextInt(30) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-                    bandada.getDisparo(disparosEnemigo);
+                    bandada.getDisparo(disparosEnemigo,modo);
                 }
                 break;
             case DAW:
                 if (new Random().nextInt(10) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-                    bandada.getDisparo(disparosEnemigo);
+                    bandada.getDisparo(disparosEnemigo,modo);
                 }
                 break;
 
             default:
                 if (new Random().nextInt(100) == 2) {//Suceso aleatorio que controlará los disparos enemigos
-                    bandada.getDisparo(disparosEnemigo);
+                    bandada.getDisparo(disparosEnemigo,modo);
                 }
                 break;
         }

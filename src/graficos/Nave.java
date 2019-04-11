@@ -29,8 +29,16 @@ public class Nave extends Entidad {
         keys = 0x00000000;//Establecemos las keys a 0 y tomará el valor de la tecla P u O que será 0x00000011 y 0x00001100
     }
 
-    public void iniciar() {//Mostramos nuestra nave por la pantalla
-        setImagen("/recursos/gabriel.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+    public void iniciar(Modo modo) {//Mostramos nuestra nave por la pantalla
+        switch (modo){
+            case MODO_ALUMNO: setImagen("/recursos/gabriel.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+                break;
+            case MODO_PROFESOR:setImagen("/recursos/vico.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+                break;
+            default: setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+                break;
+        }
+        
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
