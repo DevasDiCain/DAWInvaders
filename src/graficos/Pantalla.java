@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class Pantalla extends JFrame{
 
     private javax.swing.JLabel cabezera;
-    public static final int ALTO = 480;//Le damos un alto y un ancho a nuestra pantalla
+    public static final int ALTO = 540;//Le damos un alto y un ancho a nuestra pantalla
     public static final int ANCHO = 640;
     private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/iconoDaw.png"));//Añadimos el icono que queramos
     public Pantalla(Dificultad lvl, String alias, Modo modo)
@@ -31,7 +31,7 @@ public class Pantalla extends JFrame{
         setResizable(false);//Evitamos que puedan maximizarlo o minimizarlo
         setVisible(true);//Lo ponemos visible
         setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
-        
+   
         
         
         

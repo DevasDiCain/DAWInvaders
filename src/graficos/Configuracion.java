@@ -26,7 +26,7 @@ public class Configuracion extends javax.swing.JFrame {
 
     public Configuracion() {
         initComponents();
-        this.setSize(560, 487);
+        this.setSize(562, 487);
         setLocationRelativeTo(null);//Ajusta la ventana al centro del escritorio
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
         setResizable(false);//Impedir el reajuste de la pantalla

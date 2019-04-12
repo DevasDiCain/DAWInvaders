@@ -41,7 +41,7 @@ public class Nave extends Entidad {
                 break;
         }
         
-        setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 2);//le damos la posicion en nuestra pantalla que será abajo en el centro
+        setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 3);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
     @Override
