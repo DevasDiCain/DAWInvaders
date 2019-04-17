@@ -17,7 +17,7 @@ public class Configuracion extends javax.swing.JFrame {
     /**
      * Creates new form Configuracion
      */
-    private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/iconoDaw.png"));//Añadimos el icono que queramos
+    private static final ImageIcon icono = new ImageIcon(Juego.class.getResource("/recursos/logo_icono.png"));//Añadimos el icono que queramos
 
     public ImageIcon getImagenEscala(String ruta, int ancho, int alto) {
         ImageIcon imagenOriginal = new ImageIcon(getClass().getClassLoader().getResource(ruta));
@@ -47,13 +47,13 @@ public class Configuracion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(asistente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Configuracion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(asistente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Configuracion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(asistente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Configuracion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(asistente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Configuracion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
