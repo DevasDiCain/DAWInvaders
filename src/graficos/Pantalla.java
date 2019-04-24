@@ -31,7 +31,7 @@ public class Pantalla extends JFrame{
         setResizable(false);//Evitamos que puedan maximizarlo o minimizarlo
         setVisible(true);//Lo ponemos visible
         setIconImage(icono.getImage());//Cambiamos el icono de nuestra ventana
-   
+        
         
         
         

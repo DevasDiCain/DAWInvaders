@@ -61,6 +61,7 @@ public class Configuracion extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new Configuracion().setVisible(true);
         });
+
     }
 
     /**
@@ -288,7 +289,7 @@ public class Configuracion extends javax.swing.JFrame {
         if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Clasico")) {
             new Pantalla(Dificultad.DAW, jTextField1.getText(), Modo.MODO_CLASICO);
         }
-        System.out.println("Dificultad -> " + dificultad.getSelectedItem() + "\n Alias     -> " + jTextField1.getText()+"\n Modo      -> "+modo.getSelectedItem());
+        System.out.println("Dificultad -> " + dificultad.getSelectedItem() + "\n Alias     -> " + jTextField1.getText() + "\n Modo      -> " + modo.getSelectedItem());
         setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed

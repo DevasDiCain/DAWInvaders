@@ -18,13 +18,14 @@ public class Nave extends Entidad {
     private static final int TECLA_D = 0x00000011;//Asignamos las teclas utilizando val
     private static final int TECLA_A = 0x00001100;
 
-   
+    public boolean estado;
     
     private int keys;
     private boolean disparando;
 
     public Nave() {//Constructor que hereda los atributos de la clase Entidad
         super();
+        estado= true;
         disparando = false;//Estado de disparar OFF
         keys = 0x00000000;//Establecemos las keys a 0 y tomará el valor de la tecla P u O que será 0x00000011 y 0x00001100
     }
@@ -46,7 +47,6 @@ public class Nave extends Entidad {
 
     @Override
     public void actualizar() {//Metodo heredado que actualiza la posición de nuestra nave
-
         if (keys == 0) desplazamientoHorizontal = 0;
         if (keys == TECLA_D) desplazamientoHorizontal = velocidad;//Si pulsamos P nos movemos a la derecha
         if (keys == TECLA_A) desplazamientoHorizontal = -velocidad;//Si pulsamos O nos movemos a la izquierda

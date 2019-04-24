@@ -34,17 +34,17 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Dificultad dificultad;
     private String nombre;
     public int puntuacion;
-    private boolean estado;
+    public boolean estado;
 
     public Juego(Dificultad nivel, String alias, Modo modo) {
-        puntuacion = 0 ;
+        puntuacion = 0;
         nombre = alias;
         dificultad = nivel;
         nave = new Nave();
         bandada = new Bandada();
         disparoNave = new Disparo(Disparo.Tipo.NAVE);
         disparosEnemigo = new ArrayList<Disparo>();
-        estado=true;
+        estado = true;
 
         addKeyListener(new KeyAdapter() {//Añadimos un keylistener (con este método nuestor programa podrá reconocer las teclas pulsadas (A ...D))
             @Override
@@ -64,14 +64,14 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
 
         Timer timer = new Timer(15, this);//Comenzamos un contador de 15
         timer.start();//Lo iniciamos
-        
+
         iniciarJuego(modo);//Iniciamos el juego
     }
 
     public void iniciarJuego(Modo modo) {
         nave.iniciar(modo);
         bandada.iniciar(modo);
-        
+
     }
 
     public void paint(Graphics g) {//Creamos el método que nos dibujará en pantalla los elementos contenidos  en los atributos de nuestro juego (nuestra nave, nuestro disparo, enemigos, disparo de enemigos...)
@@ -83,7 +83,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         if (disparoNave.estaActivado()) {
             g2d.drawImage(disparoNave.getImagen(), disparoNave.getX(), disparoNave.getY(), this);//Si nuestra nave está disparando dibuja sus disparos
         }
-        
+
         for (Disparo d : disparosEnemigo) {//Si el enemigos nos dispara , dibujará sus disparos
             d.actualizar();
             g2d.drawImage(d.getImagen(), d.getX(), d.getY(), this);
@@ -94,7 +94,6 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
                 g2d.drawImage(e.getImagen(), e.getX(), e.getY(), this);
             }
         }
-        
 
         Toolkit.getDefaultToolkit().sync();////Sincronizamos el estado de los graficos/ Al ser una clase abstracta no podemos instanciarla
         g.dispose();//Liberamos los recursos del sistema utilizados por el elemento Graphics
@@ -102,24 +101,23 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
 
     @Override
     public void actionPerformed(ActionEvent ae) {//Controlamos el evento sucedido al pulsar ESPACIO 
-        nave.actualizar();
-        disparoNave.actualizar();
-        for (Disparo d : disparosEnemigo) {
-            d.actualizar();
+        if (estado == true) {
+            nave.actualizar();
+            disparoNave.actualizar();
+            for (Disparo d : disparosEnemigo) {
+                d.actualizar();
+
+            }
+            bandada.actualizar();
+            gestionarDisparos(dificultad);
+            gestionarColisiones();
+            repaint();
         }
-        bandada.actualizar();
-        gestionarDisparos(dificultad);
-        gestionarColisiones();
-        repaint();
-         if(estado==false){
-          //TEMPORA
-               Score  punt = new Score();
-              
-               punt.setVisible(true);
-               
-               //FIN TEMPORAL
+        if (estado == false) {
+            System.out.println("Hola");
+            return;
         }
-        
+
     }
 
     //AQUI CONTROLAREMOS LOS DISPAROS Y LAS COLISIONES GRACIAS A LOS MÉTODOS IMPLEMENTADOS EN LAS CLASES RESPECTIVAS
@@ -148,11 +146,17 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             Rectangle r = new Rectangle(d.getX(), d.getY(), d.getAlto(), d.getAncho());//Le asignamos una zona a los disparos enemigos
             if (nave.comprobarColision(r)) {//Comprobamos si le dan a nuestra nave
                 this.setVisible(false);
-                estado=false;
+                estado = false;
+
             }
         }
-       
-        
+
+    }
+
+    private void comprobarEstado() {
+        if (this.estado == false) {
+            System.out.println("hola");
+        }
     }
 
     private void gestionarDisparos(Dificultad nivel) {//Este método controlará los disparos
