@@ -84,7 +84,7 @@ public class Enemigo extends Entidad {
             setImagen("/recursos/jugadorChiri.png");
         }
         if (t == Tipo.TIPO_VICO && modo==Modo.MODO_PROFESOR){
-            setImagen("/recursos/gabriel.png");
+            setImagen("/recursos/miguel angel.png");
         }
         //Clasico
         if (t == Tipo.TIPO_1 && modo==Modo.MODO_CLASICO) {//Le damos una visualización a cada enemigo dependiendo del tipo que sea
