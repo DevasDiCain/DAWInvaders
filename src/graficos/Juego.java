@@ -130,8 +130,10 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             if (bandada.comprobarColision(r)) {//Y la bandada enemiga detecta colisión
                 disparoNave.desactivar();//la bala desaparecerá
                 puntuacion++;
-                 if(puntuacion == 35){//Método que volverá a pintar la bandada enemiga
+                contador++;
+                 if(contador == 39){//Método que volverá a pintar la bandada enemiga
                      bandada.iniciar(Modo.MODO_ALUMNO);
+                     contador=0;
             
 
         }
