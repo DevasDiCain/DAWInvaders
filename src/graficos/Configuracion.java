@@ -240,6 +240,7 @@ public class Configuracion extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
+            
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void dificultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificultadActionPerformed

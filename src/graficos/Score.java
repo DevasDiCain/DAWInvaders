@@ -23,6 +23,7 @@ public class Score extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
         setResizable(false);//Impedir el reajuste de la pantalla
         jLabel3.setText(Juego.puntuacion.toString());
+        nombre.setText(Juego.nombre);
     }
 
     /**
@@ -34,6 +35,7 @@ public class Score extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         cabecera = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -48,8 +50,11 @@ public class Score extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        nombre = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+
+        jLabel8.setText("jLabel8");
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -59,7 +64,7 @@ public class Score extends javax.swing.JFrame {
         cabecera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/salva.png"))); // NOI18N
         cabecera.setText(" DAW INVADERS");
         cabecera.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(cabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 413, 86));
+        getContentPane().add(cabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 413, 86));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -143,15 +148,19 @@ public class Score extends javax.swing.JFrame {
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 280, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
-        jLabel8.setText("jLabel4");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
+        nombre.setFont(new java.awt.Font("Rekha", 1, 18)); // NOI18N
+        nombre.setForeground(new java.awt.Color(223, 249, 17));
+        nombre.setText("jLabel9");
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 230, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
         jLabel9.setText("jLabel4");
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 280, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoInterfaz.jpg"))); // NOI18N
+        jLabel10.setText("jLabel10");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -210,6 +219,7 @@ public class Score extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dificultad;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -222,5 +232,6 @@ public class Score extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox<String> modo;
+    private javax.swing.JLabel nombre;
     // End of variables declaration//GEN-END:variables
 }
