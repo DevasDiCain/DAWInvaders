@@ -19,38 +19,47 @@ public class Nave extends Entidad {
     private static final int TECLA_A = 0x00001100;
 
     public boolean estado;
-    
+
     private int keys;
     private boolean disparando;
 
     public Nave() {//Constructor que hereda los atributos de la clase Entidad
         super();
-        estado= true;
+        estado = true;
         disparando = false;//Estado de disparar OFF
         keys = 0x00000000;//Establecemos las keys a 0 y tomará el valor de la tecla P u O que será 0x00000011 y 0x00001100
     }
 
     public void iniciar(Modo modo) {//Mostramos nuestra nave por la pantalla
-        switch (modo){
-            case MODO_ALUMNO: setImagen("/recursos/gabriel.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+        switch (modo) {
+            case MODO_ALUMNO:
+                setImagen("/recursos/gabriel.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
-            case MODO_PROFESOR:setImagen("/recursos/vico.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+            case MODO_PROFESOR:
+                setImagen("/recursos/vico.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
-            case MODO_CLASICO:setImagen("/recursos/nave1.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+            case MODO_CLASICO:
+                setImagen("/recursos/nave1.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
-            default: setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
+            default:
+                setImagen("/recursos/jugadorChiri.png");//Imagen de nuestra nave cambiada por el método implementado en Entidad
                 break;
         }
-        
+
         setPosicion(Pantalla.ANCHO / 2 - getAncho() / 2, Pantalla.ALTO - getAlto() * 3);//le damos la posicion en nuestra pantalla que será abajo en el centro
     }
 
     @Override
     public void actualizar() {//Metodo heredado que actualiza la posición de nuestra nave
-        if (keys == 0) desplazamientoHorizontal = 0;
-        if (keys == TECLA_D) desplazamientoHorizontal = velocidad;//Si pulsamos P nos movemos a la derecha
-        if (keys == TECLA_A) desplazamientoHorizontal = -velocidad;//Si pulsamos O nos movemos a la izquierda
-
+        if (keys == 0) {
+            desplazamientoHorizontal = 0;
+        }
+        if (keys == TECLA_D) {
+            desplazamientoHorizontal = velocidad;//Si pulsamos P nos movemos a la derecha
+        }
+        if (keys == TECLA_A) {
+            desplazamientoHorizontal = -velocidad;//Si pulsamos O nos movemos a la izquierda
+        }
         x += desplazamientoHorizontal;//controlamos el desplazamiento en X
 
         if (x < 0) {
@@ -60,9 +69,10 @@ public class Nave extends Entidad {
         if (x > Pantalla.ANCHO - getAncho()) {//Corregimos la posición para no salirnos de la pantalla
             x = Pantalla.ANCHO - getAncho();
         }
-        
+
     }
-        public void teclaPulsada(KeyEvent evento) {//Con este método controlamos el desplazamiento de nuestra nave al pulsar
+
+    public void teclaPulsada(KeyEvent evento) {//Con este método controlamos el desplazamiento de nuestra nave al pulsar
 
         char tecla = evento.getKeyChar();
 
@@ -72,6 +82,14 @@ public class Nave extends Entidad {
         }
 
         if ((tecla == 'd' || tecla == 'D')) {
+            desplazamientoHorizontal = velocidad;
+            keys = keys | TECLA_D;
+        }
+        if (evento.getKeyCode()== KeyEvent.VK_LEFT) {
+           desplazamientoHorizontal = -velocidad;
+           keys = keys | TECLA_A;
+        }
+        if (evento.getKeyCode() == KeyEvent.VK_RIGHT) {
             desplazamientoHorizontal = velocidad;
             keys = keys | TECLA_D;
         }
@@ -89,7 +107,13 @@ public class Nave extends Entidad {
             keys = keys ^ TECLA_A;
         }
 
-        if (tecla == 'd' || tecla == 'D'){
+        if (tecla == 'd' || tecla == 'D') {
+            keys = keys ^ TECLA_D;
+        }
+        if (evento.getKeyCode() == KeyEvent.VK_LEFT) {
+            keys = keys ^ TECLA_A;
+        }
+        if (evento.getKeyCode()== KeyEvent.VK_RIGHT) {
             keys = keys ^ TECLA_D;
         }
     }
@@ -109,10 +133,5 @@ public class Nave extends Entidad {
         }
         return false;
     }
-    
-    
-    
-    
-
 
 }
