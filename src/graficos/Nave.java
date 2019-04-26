@@ -60,6 +60,7 @@ public class Nave extends Entidad {
         if (x > Pantalla.ANCHO - getAncho()) {//Corregimos la posición para no salirnos de la pantalla
             x = Pantalla.ANCHO - getAncho();
         }
+        
     }
         public void teclaPulsada(KeyEvent evento) {//Con este método controlamos el desplazamiento de nuestra nave al pulsar
 

@@ -33,7 +33,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
     private Dificultad dificultad;
     private String nombre;
-    public int puntuacion;
+    public static Integer puntuacion=0;
     public boolean estado;
 
     public Juego(Dificultad nivel, String alias, Modo modo) {
@@ -62,7 +62,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         setBackground(Color.white);
         setDoubleBuffered(true);//Iniciamos el doble buffer para que la actualización por pantalla sea fluida
 
-        Timer timer = new Timer(15, this);//Comenzamos un contador de 15
+        Timer timer = new Timer(15, this);//Comenzamos un contador de 15 NECESARIO PARA QUE SE MUEVAN LAS PIEZAS
         timer.start();//Lo iniciamos
 
         iniciarJuego(modo);//Iniciamos el juego
@@ -113,10 +113,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             gestionarColisiones();
             repaint();
         }
-        if (estado == false) {
-            System.out.println("Hola");
-            return;
-        }
+        
 
     }
 
@@ -147,7 +144,11 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             if (nave.comprobarColision(r)) {//Comprobamos si le dan a nuestra nave
                 this.setVisible(false);
                 estado = false;
-
+                if (estado == false) {
+                   Score nuevo = new Score();
+                   nuevo.setVisible(true);
+            return;
+        }
             }
         }
 
@@ -164,6 +165,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             disparoNave.setPosicion(nave.getX() + (nave.getAncho() / 2) - 5, nave.getY() + 2);//El disparo efectuado tomará la posición X de la posición de la nave (X) más la mitad del ancho de la nave y el alto de la nave 
             disparoNave.activar();//Activamos el disparo
             nave.setDisparando(false);//Desactivamos el estado de disparando para cortar el disparo
+            
         }
         switch (nivel) {
             case FACIL:
