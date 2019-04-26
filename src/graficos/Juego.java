@@ -32,11 +32,14 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Disparo disparoNave;//Nuestros disparos
     private ArrayList <Disparo>disparosNave;
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
-    private Dificultad dificultad;
+    public  Dificultad dificultad;
+
+   
     public static String nombre;
     public static Integer puntuacion=0;
     public boolean estado;
     private int contador;//LLevará el control de las bandadas
+    public  Modo modo;
 
     public Juego(Dificultad nivel, String alias, Modo modo) {
         puntuacion = 0;
@@ -46,10 +49,13 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         bandada = new Bandada();
         switch (modo){
                 case MODO_ALUMNO: disparoNave = new Disparo(Modo.MODO_ALUMNO,Disparo.Tipo.NAVE);
+                    modo= Modo.MODO_ALUMNO;
                     break;
                 case MODO_PROFESOR:disparoNave = new Disparo(Modo.MODO_PROFESOR,Disparo.Tipo.NAVE);
+                    modo= Modo.MODO_PROFESOR;
                     break;
                 case MODO_CLASICO:disparoNave = new Disparo(Modo.MODO_CLASICO,Disparo.Tipo.NAVE);
+                    modo= Modo.MODO_CLASICO;
                     break;
             }
         

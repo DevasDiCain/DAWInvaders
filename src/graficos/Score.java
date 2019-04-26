@@ -23,7 +23,7 @@ public class Score extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Opcion por defecto para cerrar la ventana
         setResizable(false);//Impedir el reajuste de la pantalla
         jLabel3.setText(Juego.puntuacion.toString());
-        nombre.setText(Juego.nombre);
+        nombre.setText(Juego.nombre);;
     }
 
     /**

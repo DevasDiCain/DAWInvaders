@@ -183,6 +183,7 @@ public class Bandada {
                 sentido = Direccion.DERECHA;
                 sentidoCambiado = true;
             }
+            
         }
     }
 
