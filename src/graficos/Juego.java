@@ -30,6 +30,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
     private Nave nave;//Creamos nuestra nave    
     private Bandada bandada;//Creamos un grupo de enemigos
     private Disparo disparoNave;//Nuestros disparos
+    private ArrayList <Disparo>disparosNave;
     private ArrayList<Disparo> disparosEnemigo;//Lista de disparos enemigos
     private Dificultad dificultad;
     private String nombre;
