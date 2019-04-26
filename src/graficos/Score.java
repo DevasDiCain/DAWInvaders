@@ -167,42 +167,42 @@ public class Score extends javax.swing.JFrame {
         // boton comenzar
         //MODO ALUMNO
         if (dificultad.getSelectedItem().equals("Fácil") && modo.getSelectedItem().equals("Alumno")) {
-            new Pantalla(Dificultad.FACIL, "Jugador", Modo.MODO_ALUMNO);
+            new Pantalla(Dificultad.FACIL, Juego.nombre, Modo.MODO_ALUMNO);
         }
         if (dificultad.getSelectedItem().equals("Medio") && modo.getSelectedItem().equals("Alumno")) {
-            new Pantalla(Dificultad.MEDIO, "Jugador", Modo.MODO_ALUMNO);
+            new Pantalla(Dificultad.MEDIO, Juego.nombre, Modo.MODO_ALUMNO);
         }
         if (dificultad.getSelectedItem().equals("Dificil") && modo.getSelectedItem().equals("Alumno")) {
-            new Pantalla(Dificultad.DIFICIL, "Jugador", Modo.MODO_ALUMNO);
+            new Pantalla(Dificultad.DIFICIL, Juego.nombre, Modo.MODO_ALUMNO);
         }
         if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Alumno")) {
-            new Pantalla(Dificultad.DAW, "Jugador", Modo.MODO_ALUMNO);
+            new Pantalla(Dificultad.DAW, Juego.nombre, Modo.MODO_ALUMNO);
         }
         //MODO PROFESOR
         if (dificultad.getSelectedItem().equals("Fácil") && modo.getSelectedItem().equals("Profesor")) {
-            new Pantalla(Dificultad.FACIL, "Jugador", Modo.MODO_PROFESOR);
+            new Pantalla(Dificultad.FACIL, Juego.nombre, Modo.MODO_PROFESOR);
         }
         if (dificultad.getSelectedItem().equals("Medio") && modo.getSelectedItem().equals("Profesor")) {
-            new Pantalla(Dificultad.MEDIO, "Jugador", Modo.MODO_PROFESOR);
+            new Pantalla(Dificultad.MEDIO, Juego.nombre, Modo.MODO_PROFESOR);
         }
         if (dificultad.getSelectedItem().equals("Dificil") && modo.getSelectedItem().equals("Profesor")) {
-            new Pantalla(Dificultad.DIFICIL, "Jugador", Modo.MODO_PROFESOR);
+            new Pantalla(Dificultad.DIFICIL, Juego.nombre, Modo.MODO_PROFESOR);
         }
         if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Profesor")) {
-            new Pantalla(Dificultad.DAW, "Jugador", Modo.MODO_PROFESOR);
+            new Pantalla(Dificultad.DAW, Juego.nombre, Modo.MODO_PROFESOR);
         }
         //MODO CLASICO
         if (dificultad.getSelectedItem().equals("Fácil") && modo.getSelectedItem().equals("Clasico")) {
-            new Pantalla(Dificultad.FACIL, "Jugador", Modo.MODO_CLASICO);
+            new Pantalla(Dificultad.FACIL, Juego.nombre, Modo.MODO_CLASICO);
         }
         if (dificultad.getSelectedItem().equals("Medio") && modo.getSelectedItem().equals("Clasico")) {
-            new Pantalla(Dificultad.MEDIO,"Jugador", Modo.MODO_CLASICO);
+            new Pantalla(Dificultad.MEDIO,Juego.nombre, Modo.MODO_CLASICO);
         }
         if (dificultad.getSelectedItem().equals("Dificil") && modo.getSelectedItem().equals("Clasico")) {
-            new Pantalla(Dificultad.DIFICIL, "Jugador", Modo.MODO_CLASICO);
+            new Pantalla(Dificultad.DIFICIL, Juego.nombre, Modo.MODO_CLASICO);
         }
         if (dificultad.getSelectedItem().equals("DAW") && modo.getSelectedItem().equals("Clasico")) {
-            new Pantalla(Dificultad.DAW,"Jugador", Modo.MODO_CLASICO);
+            new Pantalla(Dificultad.DAW,Juego.nombre, Modo.MODO_CLASICO);
         }
        
         setVisible(false);
