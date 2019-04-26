@@ -94,6 +94,7 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
                 g2d.drawImage(e.getImagen(), e.getX(), e.getY(), this);
             }
         }
+       
 
         Toolkit.getDefaultToolkit().sync();////Sincronizamos el estado de los graficos/ Al ser una clase abstracta no podemos instanciarla
         g.dispose();//Liberamos los recursos del sistema utilizados por el elemento Graphics
@@ -128,6 +129,12 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
             if (bandada.comprobarColision(r)) {//Y la bandada enemiga detecta colisión
                 disparoNave.desactivar();//la bala desaparecerá
                 puntuacion++;
+                 if(puntuacion == 35){//Método que volverá a pintar la bandada enemiga
+                     bandada.iniciar(Modo.MODO_ALUMNO);
+            
+
+        }
+      
             }
         }
 
@@ -151,6 +158,8 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         }
             }
         }
+       
+        
 
     }
 
