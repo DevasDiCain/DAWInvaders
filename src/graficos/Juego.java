@@ -44,7 +44,15 @@ public class Juego extends JPanel implements ActionListener {//Aquí vendrá la 
         dificultad = nivel;
         nave = new Nave();
         bandada = new Bandada();
-        disparoNave = new Disparo(Disparo.Tipo.NAVE);
+        switch (modo){
+                case MODO_ALUMNO: disparoNave = new Disparo(Modo.MODO_ALUMNO,Disparo.Tipo.NAVE);
+                    break;
+                case MODO_PROFESOR:disparoNave = new Disparo(Modo.MODO_PROFESOR,Disparo.Tipo.NAVE);
+                    break;
+                case MODO_CLASICO:disparoNave = new Disparo(Modo.MODO_CLASICO,Disparo.Tipo.NAVE);
+                    break;
+            }
+        
         disparosEnemigo = new ArrayList<Disparo>();
         estado = true;
 

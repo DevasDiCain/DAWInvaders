@@ -31,6 +31,34 @@ public class Disparo extends Entidad {
         x = 0;
         y = 0;
     }
+    
+    public Disparo(Modo modo , Tipo t){
+        super();
+        if (t == Tipo.ENEMIGO) {
+            switch (modo){
+                case MODO_ALUMNO: setImagen("/recursos/disparo_cero.png");
+                    break;
+                case MODO_PROFESOR:setImagen("/recursos/disparo_uno.png");
+                    break;
+                case MODO_CLASICO:setImagen("/recursos/disparo.png");
+                    break;
+            }
+        }
+        if (t == Tipo.NAVE) {
+             switch (modo){
+                case MODO_ALUMNO: setImagen("/recursos/disparo_cero.png");
+                    break;
+                case MODO_PROFESOR:setImagen("/recursos/disparo_uno.png");
+                    break;
+                case MODO_CLASICO:setImagen("/recursos/disparo.png");
+                    break;
+            }
+        }
+         tipo = t;
+        x = 0;
+        y = 0;
+        
+    }
      public void setPosicion(int x, int y) {
         super.setPosicion(x, y);
     }
